@@ -10,6 +10,32 @@
   padding: 12px;
   overflow-x: hidden; /* prevent accidental horizontal scroll */
 }
+
+/* Sticky header wrapper so title stays visible while scrolling */
+.headerWrap{
+  position: sticky;
+  top: 12px; /* respect the container padding */
+  z-index: 40;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events: auto;
+}
+
+.appTitle{
+  background-color: lightblue;
+  text-align: center;
+  border-radius: 10px;
+  width: min(90vw, 500px);
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+}
+
+/* Add top spacing to the main content so the sticky header doesn't overlap content when fixed */
+.membersArea{
+  margin-top: 8px;
+}
 .container-reset{box-sizing: border-box;}
 .memberList{
   display:flex;

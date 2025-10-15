@@ -264,11 +264,8 @@ function App() {
 
       {/* <h1 style=" backgroundColor: 'lightblue' ">First batch is the best batch</h1> */}
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <h1 style={{ backgroundColor: 'lightblue', textAlign: 'center', borderRadius: '10px', width: 'min(90vw, 500px)',
-                    padding: '10px', margin: '10px' }}>
-                    Lucky Loopers
-                </h1>
+            <div className="headerWrap">
+                <h1 className="appTitle">Lucky Loopers</h1>
             </div>
        
              <AboutUs />
