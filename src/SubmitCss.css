@@ -1,0 +1,102 @@
+.highlight {
+    background-color: #1b1b1a;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+ 
+    border: 3px solid #ff6b6b;
+    border-radius: 10px;
+    border: 10px solid black;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+.memberList{
+  border-radius: 10px solid black;
+}
+
+/* Running state applied to all members while the lottery runs */
+.running {
+    /* add a gold border line while time-looping */
+    outline: 2px solid rgba(255, 215, 0, 0.7);
+    outline-offset: 2px;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.06);
+    transition: outline 0.15s ease, box-shadow 0.15s ease;
+}
+
+.winnerMsg{
+    margin-top: 12px;
+    background: linear-gradient(90deg, #e0ffe6, #fff7e6);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #b6f2b0;
+    color: #0b6b0b;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Winner styling applied to the final chosen member */
+.winner {
+    position: relative;
+    /* updated: purple -> cyan gradient for an attractive winner card */
+    border: 3px solid #5b21a8;
+    background: linear-gradient(135deg, #8a2be2 0%, #00d4ff 100%);
+    box-shadow: 0 18px 48px rgba(58,12,163,0.22);
+    transform: scale(1.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    color: #000000; /* black text for winner as requested */
+}
+
+.winner h2,
+.winner p {
+    color: #000000;
+}
+
+.winner::after{
+    content: "🏆";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: white;
+    border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* subtle pulse for winner card */
+@keyframes winnerPulse {
+    0% { transform: scale(1.06); }
+    50% { transform: scale(1.09); }
+    100% { transform: scale(1.06); }
+}
+.winner {
+    animation: winnerPulse 1.6s ease-in-out infinite;
+}
+
+/* Submit button styles */
+.submitBtn{
+    width: 120px;
+    height: 44px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(90deg, #7b2ff7 0%, #2bd2ff 100%);
+    box-shadow: 0 8px 24px rgba(43,210,255,0.12), inset 0 -2px 0 rgba(0,0,0,0.06);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.14s ease, box-shadow 0.14s ease, opacity 0.14s ease;
+}
+.submitBtn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(43,210,255,0.16);
+}
+.submitBtn:active{
+    transform: translateY(0);
+}
+.submitBtn[disabled]{
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
