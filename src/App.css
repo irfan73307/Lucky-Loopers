@@ -31,6 +31,13 @@
   box-shadow: 0 6px 18px rgba(16,24,40,0.06);
 }
 
+/* Ensure About section elements are not sticky or affected by sticky rules */
+.aboutWrap, .aboutWrap .aboutTitle, .aboutWrap .aboutText{
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
+}
+
 /* Add top spacing to the main content so the sticky header doesn't overlap content when fixed */
 .membersArea{
   margin-top: 8px;
